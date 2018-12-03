@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" type="text/css" href="../css/styles.css">
+
 
 <ul>
     <li><a href="/" id="pradzia">Pradzia</a></li>

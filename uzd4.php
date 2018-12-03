@@ -12,8 +12,7 @@ include("fragments/menu.php");
 ?>
 
 <h2>Parasyti koda, kuris gauna per parametrus skaicius ir atspausdina ju suma.</h2>
-<atsakymas>
-    <?php
+<atsakymas><?php
 
 
     function suma($belekoks1, $belekoks2)
@@ -34,7 +33,6 @@ include("fragments/menu.php");
         skirtumas($a, $b);
     }
 
-    ?>
-</atsakymas>
+    ?></atsakymas>
 </body>
 </html>
