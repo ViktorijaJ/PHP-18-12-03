@@ -33,7 +33,7 @@ include("fragments/menu.php");
     nuskaityti();
     skaiciavimas();
 
-    echo "Jusu sunaudotas kuro kiekis: " . $GLOBALS['litrai'] . "l., nuvaziuotas atstumas: " . $GLOBLS['km'] . "km., vidutinskai automobilio sunaudojamas kuro kiekis: " . $GLOBALS['vidur'] . " l/km.";
+    echo "Jusu sunaudotas kuro kiekis: " . $GLOBALS['litrai'] . "l., nuvaziuotas atstumas: " . $GLOBALS['km'] . "km., vidutinskai automobilio sunaudojamas kuro kiekis: " . $GLOBALS['vidur'] . " l/km.";
 
     ?>
 </atsakymas>
