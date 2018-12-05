@@ -8,16 +8,14 @@
 <?php
 include("../fragments/menu2.php");
 ?>
-<h2>Sukurti puslapį, kuris leistų įvesti skaičius atskirtus kableliais. Paspaudus submit, turi būti atvaizduojama įvestų
-    skaičių suma ir visi įvesti skaičiai.</h2>
+<h2>Sukurti puslapį, kuris leistų įvesti skaičius atskirtus kableliais. Paspaudus submit, atvaizduoti tik tuos skaičius
+    kurie buvo didesni nei 100.</h2>
 
 <form action="#" method="get">
     <input type="text" name="skaiciai">
     <input type="submit">
 </form>
 <?php
-// susikurti sumos kintamaji ir priskirti pradzioje 0;
-$suma = 0;
 // patikrinti ar request viduje yra kintamasis skaiciai
 if (isset($_REQUEST["skaiciai"])) {
     echo "<atsakymas>";
@@ -27,14 +25,13 @@ if (isset($_REQUEST["skaiciai"])) {
     foreach ($masyvas as $elementas) {
         // paemus masyvo elementa paversi ji skaicium ir pasideti i kintamaji sk
         $sk = floatval($elementas);
-        // sk prideti prie sumos
-        $suma += $sk;
-        // atvaizduoti sk
-        echo "<br> $sk";
+        // ar sk didesnis nei 100
+        if ($sk > 100) {
+            // atvaizduoti sk didesnius nei 100
+            echo "<br> $sk";
+        }
+        echo "</atsakymas>";
     }
-    // po ciklo atvaizduoti suma
-    echo "<br> Skaiciu suma: $suma";
-    echo "</atsakymas>";
 }
 ?>
 </body>
