@@ -1,4 +1,4 @@
-<ul>
+<ul id="menu2">
 
     <li><a href="/php_tema2/" id="tema2">PHP 2 tema</a></li>
 

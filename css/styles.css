@@ -9,6 +9,12 @@ ul {
     padding-right: 100px;
     background-color: darkgray;
 }
+ul#menu2 {
+    margin-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: darkolivegreen;
+}
 
 ul li {
     background-color: teal;
@@ -24,6 +30,16 @@ ul li a#pradzia {
     line-height: 80px;
     color: black;
     font-size: 30px;
+}
+
+ul#menu2 li {
+    background-color: indigo;
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 80px;
+    display: inline;
+    font-size: 20px;
+    text-align: center;
 }
 
 ul li:hover {

@@ -1,7 +1,7 @@
 <html>
 <head>
     <?php
-    //pradedam php sesija
+    //pradedam php sesija, naudojama, kai reikia elementus isdeti i atminti
     session_start();
     include("../fragments/styles.php");
     ?>
