@@ -22,6 +22,16 @@
 
     <li><a href="/php_tema2/uzd9.php">Uzduotis 2.9.</a></li>
 
+    <li><a href="/php_tema2/uzd10.php">Uzduotis 2.10.</a></li>
+
+    <li><a href="/php_tema2/uzd11.php">Uzduotis 2.11.</a></li>
+
+    <li><a href="/php_tema2/uzd12.php">Uzduotis 2.12.</a></li>
+
+    <li><a href="/php_tema2/uzd13.php">Uzduotis 2.13.</a></li>
+
+    <li><a href="/php_tema2/uzd14.php">Uzduotis 2.14.</a></li>
+
 
 </ul>
 
