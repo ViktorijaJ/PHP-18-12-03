@@ -18,5 +18,7 @@
 
     <li><a href="/PHP%20tema%203/uzd5.php?ugis=1.78&svoris=58">Uzduotis 3.5.</a></li>
 
+    <li><a href="/PHP%20tema%203/uzd7.php?litrai=8&km=100">Uzduotis 3.7.</a></li>
+
 </ul>
 
