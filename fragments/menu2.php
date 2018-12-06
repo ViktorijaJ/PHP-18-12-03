@@ -4,6 +4,9 @@
 
     <li><a href="/php_tema2/" class="pradzia">PHP 2 tema</a></li>
 
+    <li><a href="/PHP%20tema%203/" class="pradzia">Pereiti i PHP 3 tema</a></li>
+
+
     <li><a href="/php_tema2/uzd1.php">Uzduotis 2.1.</a></li>
 
     <li><a href="/php_tema2/uzd2.php">Uzduotis 2.2.</a></li>

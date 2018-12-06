@@ -6,6 +6,9 @@
 
     <li><a href="/php_tema2/" class="pradzia">Pereiti i PHP 2 tema</a></li>
 
+    <li><a href="/PHP%20tema%203/" class="pradzia">Pereiti i PHP 3 tema</a></li>
+
+
     <li><a href="../uzd1.php?name=Petras">Uzduotis 1.1.</a></li>
 
     <li><a href="../uzd2.php?zodis=belekas">Uzduotis 1.2.</a></li>
