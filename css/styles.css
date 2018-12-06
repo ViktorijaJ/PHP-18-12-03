@@ -15,6 +15,12 @@ ul#menu2 {
     padding-right: 100px;
     background-color: darkolivegreen;
 }
+ul#menu3 {
+    margin-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: indigo;
+}
 
 ul li {
     background-color: teal;
@@ -34,6 +40,16 @@ ul li a.pradzia {
 
 ul#menu2 li {
     background-color: indigo;
+    margin-top: 10px;
+    margin-right: 15px;
+    width: 80px;
+    display: inline;
+    font-size: 20px;
+    text-align: center;
+}
+
+ul#menu3 li {
+    background-color: darkorange;
     margin-top: 10px;
     margin-right: 15px;
     width: 80px;
