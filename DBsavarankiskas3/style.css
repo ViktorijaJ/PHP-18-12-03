@@ -1,0 +1,48 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+input.info {
+    width: 100px;
+    background-color: darkgray;
+    color: black;
+}
+
+table#info {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+table#info td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table#title {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table#title td {
+    border: 2px solid black;
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+input[type="text"] {
+    max-width: 100px;
+}

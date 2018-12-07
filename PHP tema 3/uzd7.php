@@ -38,7 +38,7 @@ include("../fragments/menu3.php");
 
         public function showAverage()
         {
-            echo "Jusu sunaudotas kuro kiekis: $this->a l., nuvaziuotas atstumas: $this->b km., vidutinskai automobilio sunaudojamas kuro kiekis: $this->average l/km.";
+            echo "<br>Jusu sunaudotas kuro kiekis: $this->a l., nuvaziuotas atstumas: $this->b km., vidutinskai automobilio sunaudojamas kuro kiekis: $this->average l/km.";
         }
     }
 
