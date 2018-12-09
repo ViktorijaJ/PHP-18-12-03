@@ -5,7 +5,7 @@ if (isset($_REQUEST["action"])) {
     $action = $_REQUEST["action"];
 
     switch ($action) {
-        case "add":
+        case "Pridėti":
             $nr = $_REQUEST["nr"];
             $marke = $_REQUEST["marke"];
             $modelis = $_REQUEST["modelis"];
@@ -17,15 +17,15 @@ if (isset($_REQUEST["action"])) {
 
             if ($bauda == "") {
                 $bauda = ($fGreitis - $lGreitis) * 2.3;
-
             }
-
             $obj->prideti($nr, $marke, $modelis, $metai, $lGreitis, $fGreitis, $bauda, $sumoketa);
             break;
-        case "delete":
+
+        case "Trinti":
             $obj->delete($_REQUEST["id"]);
             break;
-        case "save":
+
+        case "Saugoti":
             $id = $_REQUEST["id"];
             $nr = $_REQUEST["nr"];
             $marke = $_REQUEST["marke"];
@@ -37,6 +37,7 @@ if (isset($_REQUEST["action"])) {
             $sumoketa = isset($_REQUEST["sumoketa"]) ? $_REQUEST["sumoketa"] : "0";
             $obj->save($id, $nr, $marke, $modelis, $metai, $lGreitis, $fGreitis, $bauda, $sumoketa);
             break;
+
 
     }
 }
@@ -57,97 +58,90 @@ if (isset($_REQUEST["action"])) {
 
 </head>
 <body>
-
+<hr width="100%"
+<br>
 <h1>Duomenų bazės informacija:</h1>
-<table name="title">
+<table id="main">
     <tr>
         <td>ID</td>
-        <td>Automobilio numeriai</td>
-        <td>Automobilio markė</td>
-        <td>Automobilio modelis</td>
-        <td>Automobilio pagaminimo metai</td>
+        <td>Auto numeriai</td>
+        <td>Auto markė</td>
+        <td>Auto modelis</td>
+        <td>Pagaminimo metai</td>
         <td>Leistinas greitis</td>
         <td>Fiksuotas greitis</td>
         <td>Bauda</td>
-        <td>Ar sumokėta?</td>
+        <td>Sumokėta</td>
+        <td>Veiksmai</td>
 
     </tr>
 </table>
 <?php
-$result = $obj->getAutoInfo();
-$obj->printAnyTable($result);
+if (isset($_REQUEST["action"])) {
+    $action = $_REQUEST["action"];
+    switch ($action) {
+        case "BD":
+            $result = $obj->rikiuotiBD();
+            $obj->printAnyTable($result);
+            break;
+
+        case "VG":
+            $result = $obj->rikiuotiVG();
+            $obj->printAnyTable($result);
+            break;
+
+        case "PM":
+            $result = $obj->rikiuotiPM();
+            $obj->printAnyTable($result);
+            break;
+
+        case "SUM":
+            $result = $obj->rikiuotiSUM();
+            $obj->printAnyTable($result);
+            break;
+
+        default:
+            $result = $obj->getAutoInfo();
+            $obj->printAnyTable($result);
+    }
+}
+
 ?>
+<br>
 <hr width="100%">
+<br>
 
 <h3>Duomenis rikiuoti pagal: </h3>
 <form action="#" method="get">
-<input type="radio" name="action" value="BD">Baudos dydį<br>
-<input type="radio" name="action" value="VG">Viršytą greitį<br>
-<input type="radio" name="action" value="PM">Pagaminimo metus<br>
-<input type="radio" name="action" value="SUM">Ar bauda sumokėta<br>
-<br>
+    <input type="radio" name="action" value="BD">Baudos dydį</input>
+    <input type="radio" name="action" value="VG">Viršytą greitį</input>
+    <input type="radio" name="action" value="PM">Pagaminimo metus</input>
+    <input type="radio" name="action" value="SUM">Ar bauda sumokėta</input>
+    <br>
 
-<input type="submit" value="Rikiuoti">
+    <input type="submit" value="Rikiuoti">
+
 </form>
-
+<br>
 <hr width="100%"
-<br>
-<br>
+<br> <br>
 <h3>Pridėti naują informaciją: </h3>
 <form action="#" method="get">
-    <input type="text" name="nr" class="info" placeholder="Automobilio numeriai">
-    <input type="text" name="marke" class="info" placeholder="Automobilio markė">
-    <input type="text" name="modelis" class="info" placeholder="Automobilio modelis">
-    <input type="text" name="metai" class="info" placeholder="Automobilio pagaminimo metai">
+    <input type="text" name="nr" class="info" placeholder="Auto numeriai">
+    <input type="text" name="marke" class="info" placeholder="Auto markė">
+    <input type="text" name="modelis" class="info" placeholder="Auto modelis">
+    <input type="text" name="metai" class="info" placeholder="Pagaminimo metai">
     <input type="text" name="lGreitis" class="info" placeholder="Leistinas greitis">
     <input type="text" name="fGreitis" class="info" placeholder="Fiksuotas greitis">
-    <input type="text" name="bauda" class="info" placeholder="bauda">
-    <input type="text" name="sumoketa" class="info" placeholder="ar sumoketa">
+    <input type="text" name="bauda" class="info" placeholder="Bauda">
+    <input type="text" name="sumoketa" class="info" placeholder="Ar sumokėta">
 
-    <br>
-    <input type="submit" name="action" value="add">
+    <br> <br>
+    <input type="submit" name="action" value="Pridėti">
 </form>
-<?php
-$nr = $_REQUEST["nr"];
-$marke = $_REQUEST["marke"];
-$modelis = $_REQUEST["modelis"];
-$metai = $_REQUEST["metai"];
-$lGreitis = $_REQUEST["lgreitis"];
-$fGreitis = $_REQUEST["fGreitis"];
-
-$obj = new DBConn();
-$obj->setValues($nr, $marke, $modelis, $metai, $lGreitis, $fGreitis);
-$obj->prideti();
-?>
 
 <br>
-
-
-<hr width="100%">
-<br>
-<br>
-<h3>Nurodykite ID ir informaciją, kurią norite pakeisti:</h3>
-<input type="text" name="id" class="info" placeholder="ID">
-<input type="text" name="Rnr" class="info" placeholder="Automobilio numeriai">
-<input type="text" name="Rmarke" class="info" placeholder="Automobilio markė">
-<input type="text" name="Rmodelis" class="info" placeholder="Automobilio modelis">
-<input type="text" name="Rmetai" class="info" placeholder="Automobilio pagaminimo metai">
-<input type="text" name="RlGreitis" class="info" placeholder="Leistinas greitis">
-<input type="text" name="RfGreitis" class="info" placeholder="Fiksuotas greitis">
-
-<br>
-<input type="submit" onclick="redaguoti()" value="REDAGUOTI INFORMACIJĄ">
-<br>
-
-<hr width="100%">
-<br>
-<br>
-<h3>Nurodykite ID eilutės, kurios duomenis norite pašalinti: </h3>
-<input type="text" name="Did" class="info" placeholder="Iveskite ID">
-
-<br>
-<input type="submit" onclick="trinti()" value="TRINTI EILUTĘ">
-<br>
+<hr width="100%"
 
 </body>
 </html>
