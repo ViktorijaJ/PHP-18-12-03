@@ -84,26 +84,23 @@ if (isset($_REQUEST["action"])) {
             $result = $obj->rikiuotiBD();
             $obj->printAnyTable($result);
             break;
-
         case "VG":
             $result = $obj->rikiuotiVG();
             $obj->printAnyTable($result);
             break;
-
         case "PM":
             $result = $obj->rikiuotiPM();
             $obj->printAnyTable($result);
             break;
-
         case "SUM":
             $result = $obj->rikiuotiSUM();
             $obj->printAnyTable($result);
             break;
-
-        default:
-            $result = $obj->getAutoInfo();
-            $obj->printAnyTable($result);
     }
+};
+if (!isset($_REQUEST["action"])) {
+    $result = $obj->getAutoInfo();
+    $obj->printAnyTable($result);
 }
 
 ?>
